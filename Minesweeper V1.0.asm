@@ -1,7 +1,6 @@
 ##############################################################
-# Homework #3
-# name: Haiqi Wu
-# sbuid: 110425214
+# Author Haiqi Wu
+
 ##############################################################
 .text
 
@@ -1682,7 +1681,6 @@ search_cells: #s6 not used, s7 not used
 	
 	srl $t5, $t5, 4 #flag bit on the LSB
 	andi $t5, $t5, 1
-	
 	beq $t5, 0, notIsFlag # if (!cell[row][col].isFlag())
 	
 	backnotIsFlag:
@@ -1695,7 +1693,6 @@ search_cells: #s6 not used, s7 not used
 	add $t3, $t3, $s0 #+addr = t3 #addr. of this.row and col. in incell_array_
 	
 	lb $t4, ($t3) #8 bit data
-	
 	li $t8, 15
 	and $t8, $t8, $t4 #get the number bits => t8
 	beqz $t8, bigIf
@@ -1947,7 +1944,6 @@ allTrue6:
 	push($s4)
 	push($s5)
 	j condi6b
-
 condi7:
 	bge $s5, 0, cn7
 	j condi7b
@@ -1967,7 +1963,6 @@ allTrue7:
 	push($s4)
 	push($s5)
 	j condi7b
-	
 
 condi8:	
 	blt $s5, 10, cn8
@@ -1978,8 +1973,6 @@ cn8:
 	andi $t4, $t4, 1
 	beqz $t4, cnn8
 	j condi8b
-	
-	
 	
 cnn8:
 	getData($s4, $s5)
@@ -1992,10 +1985,8 @@ allTrue8:
 	push($s4)
 	push($s5)
 	j condi8b
-	
 #################################################################
-# Student defined data section
-#################################################################
+# data section           ########################################
 .data
 .align 2  # Align next items to word boundary
 cursor_row: .word -1
